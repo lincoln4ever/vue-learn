@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <label for="username">用户名</label>
+    <!--    v-model双向数据绑定: view(vue模板) <-&ndash;&gt; model(vue data)-->
+    <input type="text" name="username" id="username" v-model="msg">
+    <!-- 插值表达式，直接使用双大括号引用表达式 -->
+    <p>Hello, {{msg + 'are you ok'.toUpperCase()}}</p
+</div>
+</body>
+<script src="../libs/vue.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            msg: 'Trump'
+        }
+    });
+</script>
+</html>

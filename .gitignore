@@ -1,0 +1,5 @@
+# Created by .ignore support plugin (hsz.mobi)
+# TODO: where does this rule come from?
+docs/_book
+.idea
+/node_modules
