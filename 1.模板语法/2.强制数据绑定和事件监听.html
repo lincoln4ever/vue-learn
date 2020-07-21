@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <h2>1. 插值表达式</h2>
+    <p>插值表达式可以从vue的vm的data中读取变量，执行符合js语法的表达式</p>
+    <p>Translate message to uppercase: {{message.toUpperCase()}}</p>
+    <p>Calculate number: {{code * 1000}}</p>
+
+    <h2>2. 指令 v-blind: 数据绑定</h2>
+    <p>使用场景： 需要动态改变html元素的属性值</p>
+    <p>
+        <a v-bind:href="url">电影地址一</a>
+        <a :href="url">电影地址二</a>
+    </p>
+
+    <h2>3.指令二：v-on: 绑定事件监听 </h2>
+    <p>
+        <button v-on:click="onClick">看电影一</button>
+        <button @click="onClick">看电影二</button>
+    </p>
+
+</div>
+<script src="../libs/vue.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            code: 10,
+            message: 'there is something wrong from server',
+            url: 'http://freemovie2.com'
+        },
+        methods: {
+            onClick: function (e) {
+                console.log(e.type + ':' + e.target.innerText);
+            }
+        }
+    });
+</script>
+</body>
+</html>
